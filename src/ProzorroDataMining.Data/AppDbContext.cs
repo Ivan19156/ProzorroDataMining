@@ -1,5 +1,4 @@
-﻿
-namespace ProzorroDataMining.Data;
+﻿namespace ProzorroDataMining.Data;
 
 using Microsoft.EntityFrameworkCore;
 using ProzorroDataMining.Domain.Entities;
