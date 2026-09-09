@@ -6,5 +6,6 @@
     <Project Path="src/ProzorroDataMining.Data/ProzorroDataMining.Data.csproj" />
     <Project Path="src/ProzorroDataMining.Domain/ProzorroDataMining.Domain.csproj" />
     <Project Path="src/ProzorroDataMining.Shared/ProzorroDataMining.Shared.csproj" />
+    <Project Path="src/ProzorroDataMining.Worker/ProzorroDataMining.Worker.csproj" />
   </Folder>
 </Solution>
