@@ -22,7 +22,7 @@ public sealed class ProzorroClient : IProzorroClient
         string? offset = null,
         CancellationToken ct = default)
     {
-        var url = ProzorroConstants.Api.TenderList;
+        var url = ProzorroConstants.Api.TenderListFiltered;
         if (offset is not null)
             url += $"&offset={offset}";
 

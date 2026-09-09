@@ -16,6 +16,11 @@ public static class ProzorroConstants
 
         public static string TenderDetail(string id) =>
                string.Format(null, TenderDetailFormat, id);
+
+        public const string TenderListFiltered =
+        "api/2.5/tenders?descending=1" +
+        "&dateModified.lt=2026-01-01T00%3A00%3A00Z" +
+        "&dateModified.gte=2025-12-01T00%3A00%3A00Z";
     }
 
     public static class Filters

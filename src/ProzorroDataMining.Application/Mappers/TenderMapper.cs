@@ -18,8 +18,8 @@ public static class TenderMapper
             budgetCurrency: data.Value.Currency,
             procuringEntityId: data.ProcuringEntity.Identifier?.Id,
             procuringEntityName: data.ProcuringEntity.Name,
-            dateCreated: data.DateCreated,
-            dateModified: data.DateModified);
+            dateCreated: data.DateCreated.ToUniversalTime(),
+            dateModified: data.DateModified.ToUniversalTime());
 
         foreach (var item in data.Items ?? [])
         {
@@ -44,7 +44,9 @@ public static class TenderMapper
                 contractValue: contract.Value?.Amount,
                 currency: contract.Value?.Currency ?? "UAH",
                 status: contract.Status,
-                dateSigned: contract.DateSigned));
+                dateSigned: contract.DateSigned.HasValue 
+                                      ? contract.DateSigned.Value.ToUniversalTime() 
+                                      : null));
         }
 
         foreach (var award in data.Awards ?? [])

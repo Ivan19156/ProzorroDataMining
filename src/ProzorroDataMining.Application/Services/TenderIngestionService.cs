@@ -44,24 +44,16 @@ public sealed class TenderIngestionService : ITenderIngestionService
                 break;
             }
 
-            
-            if (listResponse.Data.Any(t => t.DateModified < ProzorroConstants.Filters.PeriodStart))
-            {
-                _logger.LogInformation("Reached period boundary, stopping pagination");
-                break;
-            }
-
-            var inPeriod = listResponse.Data
-                .Where(t => t.DateModified >= ProzorroConstants.Filters.PeriodStart
-                         && t.DateModified < ProzorroConstants.Filters.PeriodEnd)
-                .ToList();
+            _logger.LogInformation(
+                "Page fetched: {Total} items",
+                listResponse.Data.Count);
 
             _logger.LogInformation(
-                "Page fetched: {Total} items, {InPeriod} in target period",
-                listResponse.Data.Count, inPeriod.Count);
+                "First item date: {Date}, Last item date: {Date2}",
+                 listResponse.Data.First().DateModified,
+                 listResponse.Data.Last().DateModified);
 
-            
-            var tasks = inPeriod.Select(item => FetchAndFilterAsync(item, ct));
+            var tasks = listResponse.Data.Select(item => FetchAndFilterAsync(item, ct));
             var results = await Task.WhenAll(tasks);
 
            
