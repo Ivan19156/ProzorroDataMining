@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/ProzorroDataMining.API/ProzorroDataMining.API.csproj" />
+    <Project Path="src/ProzorroDataMining.Application/ProzorroDataMining.Application.csproj" />
+    <Project Path="src/ProzorroDataMining.Contracts/ProzorroDataMining.Contracts.csproj" />
+    <Project Path="src/ProzorroDataMining.Data/ProzorroDataMining.Data.csproj" />
+    <Project Path="src/ProzorroDataMining.Domain/ProzorroDataMining.Domain.csproj" />
+    <Project Path="src/ProzorroDataMining.Shared/ProzorroDataMining.Shared.csproj" />
+  </Folder>
+</Solution>
