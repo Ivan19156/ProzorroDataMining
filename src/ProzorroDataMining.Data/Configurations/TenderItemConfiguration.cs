@@ -1,5 +1,4 @@
-﻿
-namespace ProzorroDataMining.Data.Configurations;
+﻿namespace ProzorroDataMining.Data.Configurations;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
