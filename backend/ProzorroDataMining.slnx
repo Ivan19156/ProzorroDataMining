@@ -1,0 +1,9 @@
+<Solution>
+  <Project Path="ProzorroDataMining.API/ProzorroDataMining.API.csproj" />
+  <Project Path="ProzorroDataMining.Application/ProzorroDataMining.Application.csproj" />
+  <Project Path="ProzorroDataMining.Contracts/ProzorroDataMining.Contracts.csproj" />
+  <Project Path="ProzorroDataMining.Data/ProzorroDataMining.Data.csproj" />
+  <Project Path="ProzorroDataMining.Domain/ProzorroDataMining.Domain.csproj" />
+  <Project Path="ProzorroDataMining.Shared/ProzorroDataMining.Shared.csproj" />
+  <Project Path="ProzorroDataMining.Worker/ProzorroDataMining.Worker.csproj" />
+</Solution>

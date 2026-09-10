@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Http.Resilience;
-using Polly.Extensions.Http;
 using ProzorroDataMining.Application.Http;
 using ProzorroDataMining.Application.Services;
 using ProzorroDataMining.Data;
@@ -11,6 +10,7 @@ using ProzorroDataMining.Shared.Constants;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddOpenApi();
+
 builder.Services.AddDbContext<AppDbContext>(opts =>
     opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -30,9 +30,15 @@ builder.Services.AddHttpClient<IProzorroClient, ProzorroClient>(client =>
 
 builder.Services.AddScoped<ITenderRepository, TenderRepository>();
 builder.Services.AddScoped<ITenderIngestionService, TenderIngestionService>();
+builder.Services.AddScoped<IAnalyticsService, AnalyticsService>();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.DefaultIgnoreCondition =
+            System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
+    });
 
 var app = builder.Build();
-
 
 if (app.Environment.IsDevelopment())
 {
@@ -40,6 +46,5 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.MapControllers();
 app.Run();
-
