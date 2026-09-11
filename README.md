@@ -18,18 +18,19 @@ A service for collecting and analyzing Prozorro procurement data focused on CPV 
 - Docker / Docker Compose
 
 ## Architecture
-backend/
-├── ProzorroDataMining.API # REST API endpoints
-├── ProzorroDataMining.Worker # ETL Background Service
-├── ProzorroDataMining.Application # Business logic, services, mappers
-├── ProzorroDataMining.Data # EF Core, repositories, migrations
-├── ProzorroDataMining.Domain # Entities, interfaces
-├── ProzorroDataMining.Contracts # DTOs
-├── ProzorroDataMining.Shared # Constants
-└── ProzorroDataMining.UnitTests # xUnit + Shouldly + NSubstitute
 
-frontend/
-└── ui/ # React dashboard
+**Backend** (`backend/`)
+- `ProzorroDataMining.API` — REST API endpoints
+- `ProzorroDataMining.Worker` — ETL Background Service
+- `ProzorroDataMining.Application` — Business logic, services, mappers
+- `ProzorroDataMining.Data` — EF Core, repositories, migrations
+- `ProzorroDataMining.Domain` — Entities, interfaces
+- `ProzorroDataMining.Contracts` — DTOs
+- `ProzorroDataMining.Shared` — Constants
+- `ProzorroDataMining.UnitTests` — xUnit + Shouldly + NSubstitute
+
+**Frontend** (`frontend/ui/`)
+- React dashboard
 
 ## Running with Docker Compose
 
