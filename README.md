@@ -36,28 +36,40 @@ A service for collecting and analyzing Prozorro procurement data focused on CPV 
 
 ### Requirements
 - Docker Desktop installed and running
+- Git
 
-### Start all services
+### Quick Start
+
+1. Clone the repository:
+```bash
+git clone https://github.com/Ivan19156/ProzorroDataMining.git
+cd ProzorroDataMining
+```
+
+2. Start all services:
 ```bash
 docker-compose up --build
 ```
 
-### Start in background
-```bash
-docker-compose up --build -d
-```
+3. Open in browser:
+   - UI: http://localhost:3000
+   - API: http://localhost:8080/api
 
-### Stop all services
+> On startup, the API automatically applies database migrations and the Worker starts ETL import.
+
+### Additional Commands
+
+Stop all services:
 ```bash
 docker-compose down
 ```
 
-### Stop and remove volumes (reset database)
+Stop and reset database:
 ```bash
 docker-compose down -v
 ```
 
-### View logs
+View logs:
 ```bash
 # All services
 docker-compose logs -f
@@ -65,7 +77,6 @@ docker-compose logs -f
 # Specific service
 docker-compose logs -f api
 docker-compose logs -f worker
-docker-compose logs -f ui
 ```
 
 Services after startup:
