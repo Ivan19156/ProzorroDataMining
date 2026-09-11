@@ -15,9 +15,9 @@ public sealed class IngestionController : ControllerBase
     }
 
     [HttpPost("run")]
-    public async Task<IActionResult> Run(CancellationToken ct)
+    public IActionResult Run(CancellationToken ct)
     {
-        await _ingestionService.RunAsync(ct);
-        return Ok("Ingestion completed");
+        _ = Task.Run(() => _ingestionService.RunAsync(ct), ct);
+        return Accepted(new { message = "Ingestion started" });
     }
 }
