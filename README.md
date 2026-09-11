@@ -42,7 +42,7 @@ A service for collecting and analyzing Prozorro procurement data focused on CPV 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/YOUR_USERNAME/ProzorroDataMining.git
+git clone https://github.com/Ivan19156/ProzorroDataMining.git
 cd ProzorroDataMining
 ```
 
